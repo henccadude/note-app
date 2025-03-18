@@ -66,16 +66,18 @@ class App {
   }
 
   #renderNote(note) {
+  const formattedText = note.txtContent.replace(/\n/g, '<br>')
+
     const html = `
       <div class="flex-txt" data-id="${note.id}">
       <div class="item">
-        <div class="flex-txt space marg">
+        <div class="flex-txt space">
           <p>${note.timeStamp}</p>
           <p class="delete-post" id="${note.id}">❌</p>
         </div>
         <div class="flex-txt flex-txt--dir">
           <h2 class="item-header">${note.header}</h2>
-          <p class="item-txt">${note.txtContent}</p>
+          <p class="item-txt">${formattedText}</p>
         </div>  
       </div>
     `
